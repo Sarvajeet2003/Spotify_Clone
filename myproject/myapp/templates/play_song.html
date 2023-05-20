@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	{% load static %}
+<head>
+	<title>Play a Song on Spotify</title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<h1>Play a Song on Spotify</h1>
+	<form method="POST" action="{% url 'play_song' %}">
+		{% csrf_token %}
+		<label for="song_name">Enter the name of the song:</label>
+		<input type="text" id="song_name" name="song_name" required>
+		<button type="submit">Play</button>
+	</form>
+</body>
+</html>
